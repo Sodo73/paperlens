@@ -160,7 +160,7 @@ services:
       - POSTGRES_HOST_AUTH_METHOD=password
       - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -347,7 +347,7 @@ services:
       - rag-network
 
   langfuse-minio:
-    image: docker.io/minio/minio
+    image: quay.io/minio/minio
     container_name: rag-langfuse-minio
     restart: unless-stopped
     entrypoint: sh
